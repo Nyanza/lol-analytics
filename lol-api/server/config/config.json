@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "sib",
+    "password": "firetruck321",
+    "database": "lol",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "sib",
+    "password": "firetruck321",
+    "database": "lol",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "sib",
+    "password": "firetruck321",
+    "database": "lol",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
