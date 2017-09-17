@@ -6,12 +6,26 @@
 	{
 		id: '1',
 		name: 'Annie',
-		img: 'filename of sprite image' // the smaller one
+		img: 'filename of sprite image OR URL of image endpoint', // the smaller one
+		stats: [
+			{ 
+				title: 'ex. Win Rate, Games played, KDA',
+			 	value: 'string, ex. 20%, 12:1, -3.4'
+			},
+			{ .... }
+		]
 	},
 	{
 		id: '2',
 		name: 'Olaf',
-		img: 'champion2.png' 	// using example from the riot api
+		img: 'champion2.png' ,	// using example from the riot api
+		stats: [
+			{ 
+				title: 'ex. Win Rate, Games played, KDA',
+			 	value: 'string, ex. 20%, 12:1, -3.4'
+			},
+			{ .... }
+		]
 	},
 	{
 		...
