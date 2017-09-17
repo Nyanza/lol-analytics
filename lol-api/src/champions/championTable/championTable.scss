@@ -1,0 +1,28 @@
+.championTable {
+	display: grid;
+	grid-auto-flow: row;
+	grid-row-gap: 0.5em;
+	.row {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
+		grid-row-gap: 0.1em;
+		
+		height: 4em;
+		padding: 0.2em;
+		border: solid 1px red;
+
+		transition: all 0.2s;
+		cursor: pointer;
+		&:hover {
+			background-color: pink;
+		}
+		&>div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.name {
+
+		}
+	}
+}

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 
+import ChampionTable from './championTable/championTable.container.jsx';
+
 import './champions.scss';
 
 class Champions extends Component {
 	componentWillMount() {
-		this.props.fetchChampion();
+		this.props.fetchAllChampions();
 	}
 	render() {
-		console.log(this.props.selected)
 		return <div className="champions">
-			champions component
+			CHAMPIONS
+			<ChampionTable />
 		</div>;
 	}
 }

@@ -1,20 +1,17 @@
 import axios from 'axios';
-// import API from '../lol.api.js';
+import API from '../lol.api.js';
 
 
 export function fetchAllChampions() {
-	const url = 'http://localhost:8000/api/champions/Akali';
 	return {
 		type: "FETCH_ALL_CHAMPIONS",
-		payload: axios.get(url)
+		payload: axios.get(API.allChampions())
 	}
 }
 
-export function fetchChampion() {
-	console.log("ACTIONS SINGLE")
-	const url = 'http://localhost:8000/api/champions/Akali';
+export function fetchChampion(id) {
 	return {
 		type: "FETCH_CHAMPION",
-		payload: axios.get(url)
+		payload: axios.get(API.champion(id))
 	}
 }
