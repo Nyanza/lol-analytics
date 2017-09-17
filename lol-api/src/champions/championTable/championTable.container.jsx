@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
-import * as actions from './champions.actions.js';
-import Champions from './champions.jsx';
+import * as actions from '../champions.actions.js';
+import ChampionTable from './championTable.jsx';
 
 const stateToProps = (state) => ({
 	allChampions: state.champions.all,
@@ -10,7 +10,6 @@ const stateToProps = (state) => ({
 
 const dispatchToProps = (dispatch) => {
 	return {
-		fetchAllChampions: () => dispatch( actions.fetchAllChampions() ),
 		fetchChampion: (id) => dispatch( actions.fetchChampion(id) )
 	}
 }
@@ -18,6 +17,6 @@ const dispatchToProps = (dispatch) => {
 const Container = connect(
 	stateToProps,
 	dispatchToProps
-)(Champions)
+)(ChampionTable)
 
 export default Container;

@@ -12,7 +12,6 @@ class App extends Component {
 	render() {
 		return <div className="app">
 			<Champions />
-			yayyy i high tech resume soon come
 		</div>;
 	}
 }
