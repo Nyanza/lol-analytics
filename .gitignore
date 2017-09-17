@@ -1,5 +1,6 @@
 # dependencies
 lol-api/node_modules
+node_modules
 
 #System Files
 .DS_Store
