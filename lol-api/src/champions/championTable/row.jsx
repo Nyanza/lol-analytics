@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 class Row extends Component {
 	constructor(props) {
@@ -13,15 +14,14 @@ class Row extends Component {
 		// }
 	}
 	render() {
-		return <div
-			className='row' onClick={this.props.onClick}>
+		return <Link className='row' to={`/champions/${this.props.name}`}>
 			<div className='img'>{this.props.img}</div>
 			<div className='name'>{this.props.name}</div>
 			<div className='stat'>stat</div>
 			<div className='stat'>stat</div>
 			<div className='stat'>stat</div>
 			
-		</div>
+		</Link>
 	}
 }
 

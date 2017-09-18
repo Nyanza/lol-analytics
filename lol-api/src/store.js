@@ -1,6 +1,6 @@
 import { applyMiddleware, createStore } from 'redux';
 import promise from 'redux-promise';
-import reducer from './root.reducer.js';
+import reducer from './reducer.js';
 
 const middleware = applyMiddleware(promise);
 
