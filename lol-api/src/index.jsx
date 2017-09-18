@@ -9,14 +9,8 @@ import './index.scss';
 
 import Champions from './champions/champions.container.jsx';
 import CatsPage from './catsPage.jsx';
+import Kitty from './kitty.jsx';
 
-// class App extends Component {
-// 	render() {
-// 		return <div className="app">
-// 			<Champions />
-// 		</div>;
-// 	}
-// }
 class App extends Component {
 	render() {
 		return <div className="app">
@@ -30,7 +24,11 @@ const Root = ({ store }) => (
 		<Router history={browserHistory}>
 			<Route path='/' component={App}>
 				<IndexRoute component={Champions}></IndexRoute>
-				<Route path='/cats' component={CatsPage}></Route>
+				<Route path='/cats' component={CatsPage}>
+					
+				</Route>
+				<Route path='/meow/:name' component={Kitty}></Route>
+				
 			</Route>
 		</Router>
 	</Provider>	
@@ -40,10 +38,3 @@ ReactDOM.render(
 	<Root store={store} />,
 	document.getElementById('root')
 );
-
-// ReactDOM.render(
-// 	<Provider store={store}>
-// 		<App />
-// 	</Provider>,
-// 	document.getElementById('root')
-// );

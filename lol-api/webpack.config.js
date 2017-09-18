@@ -15,7 +15,8 @@ module.exports = {
 		publicPath: 'dist/'
 	},
 	devServer: {
-		historyApiFallback: true
+		historyApiFallback: true,
+		contentBase: './'
 	},
 	plugins: [
 		new ExtractTextPlugin('bundle.css')
