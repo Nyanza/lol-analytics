@@ -13,6 +13,9 @@ class Champions extends Component {
 			CHAMPIONS
 			<ChampionTable />
 		</div>;
+		// return <div className="champions">
+			
+		// </div>;
 	}
 }
 
