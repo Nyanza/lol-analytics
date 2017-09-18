@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import * as actions from './champions.actions.js';
 import Champions from './champions.jsx';
 
@@ -17,7 +16,7 @@ const dispatchToProps = (dispatch) => {
 
 const Container = connect(
 	stateToProps,
-	dispatchToProps
+	dispatchToProps,
 )(Champions)
 
 export default Container;
