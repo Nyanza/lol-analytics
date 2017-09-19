@@ -1,7 +1,13 @@
+@import '../../shared/variables.scss';
+
 .championTable {
 	display: grid;
 	grid-auto-flow: row;
-	grid-row-gap: 0.5em;
+	grid-row-gap: 0.3em;
+	a {
+		text-decoration: none;
+		color: $gold;
+	}
 	.row {
 		display: grid;
 		grid-template-columns: 1fr 2fr 1fr 1fr 1fr;
@@ -9,8 +15,10 @@
 		
 		height: 4em;
 		padding: 0.2em;
-		border: solid 1px red;
-
+		// border: solid 1px $white;
+		background-color: $black;
+		border-radius: 0.1em;
+		box-shadow: 0 0 0.5em #000;
 		transition: all 0.2s;
 		cursor: pointer;
 		&:hover {

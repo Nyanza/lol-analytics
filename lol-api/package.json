@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start:dev": "nodemon ./bin/www",
-    "start:client": "webpack-dev-server --inline"
+    "start:client": "webpack-dev-server --inline",
+    "build": "webpack -p --config=webpack.prod.js"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+@import './shared/variables.scss';
 
+// https://dribbble.com/shots/1986406-ORA-League-of-Legends
 body{
 	font-family: 'Open Sans', sans-serif;
+	background-color: $black;
+	
+	&:before {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		position:absolute;
+		left: 0;
+		top: 0;
+		background: url('./bg.jpg');
+		background-size:cover;
+		background-repeat: no-repeat;
+		z-index: -1;
+		filter: grayscale(40%);
+	}
+		
 }

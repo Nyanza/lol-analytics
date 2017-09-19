@@ -10,8 +10,11 @@ class Champions extends Component {
 	}
 	render() {
 		return <div className="champions">
-			CHAMPIONS
-			<ChampionTable />
+			<h1>CHAMPIONS</h1>
+			<div className='content'>
+				<ChampionTable />
+			</div>
+			
 		</div>;
 	}
 }
