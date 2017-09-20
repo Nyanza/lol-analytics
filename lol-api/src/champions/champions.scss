@@ -3,6 +3,24 @@
 	flex-direction: column;
 	align-items: center;
 	.content {
-		width: 900px;
+		width: 100%;
+		// width: 900px;
+	}
+	&:before {
+		content: '';
+		display: block;
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		// background: url('./bg4.jpg');
+		// background: url('./bg2.jpg');
+		background: url('./bg7.jpg');
+		// background: url('./bg11.jpg');
+		background-size:cover;
+		background-repeat: no-repeat;
+		z-index: -1;
+		filter: grayscale(60%) blur(10px);
 	}
 }

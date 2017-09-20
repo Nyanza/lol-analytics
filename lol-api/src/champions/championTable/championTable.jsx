@@ -19,13 +19,26 @@ class ChampionTable extends Component {
 			img={champ.img}
 			onClick={ () => {this.handleClick(champ.name) }}/>
 	}
+	renderHeaderRow() {
+		const headers = ['', 'name', 'stat1', 'stat2', 'stat3'];
+		return headers.map((header, index) => {
+			return <div key={index}>
+				{header}
+			</div>
+		})
+	}
 	handleClick(id) {
 		this.props.fetchChampion(id);
 	}
 	render() {
 		console.log(this.props.selected)
 		return <div className="championTable">
-			{this.renderChampions()}
+			<div className='headerRow row'>
+				{this.renderHeaderRow()}
+			</div>
+			<div className='dataRows'>
+				{this.renderChampions()}
+			</div>
 		</div>;
 	}
 }
