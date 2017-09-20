@@ -6,10 +6,10 @@ const buildUrl = (path) => {
 
 const API = {
 	allChampions: () => {
-		return buildUrl(`api/champions/`);
+		return buildUrl(`api/v1/champions/`);
 	},
 	champion: (id) => {
-		return buildUrl(`api/champions/${id}`);
+		return buildUrl(`api/v1/champions/${id}`);
 	}
 };
 
