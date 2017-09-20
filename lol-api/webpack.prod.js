@@ -22,7 +22,7 @@ module.exports = {
 	plugins: [
 		new ExtractTextPlugin('bundle.css'),
 		new webpack.DefinePlugin({
-			API_HOST: JSON.stringify('http://localhost:8000')
+			API_HOST: JSON.stringify('prod host placeholder')
 		})
 	],
 	module: {

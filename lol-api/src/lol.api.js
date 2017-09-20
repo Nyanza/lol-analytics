@@ -1,9 +1,7 @@
 import axios from 'axios';
-import config from '../config/local.json';
-
 
 const buildUrl = (path) => {
-	return `${config.host}${path}`;
+	return `${API_HOST}/${path}`;
 };
 
 const API = {

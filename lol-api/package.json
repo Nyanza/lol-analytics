@@ -4,8 +4,10 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start:dev": "nodemon ./bin/www",
-    "start:client": "webpack-dev-server --inline"
+    "start:server": "nodemon ./bin/www",
+    "start:client": "webpack-dev-server --inline",
+    "start:dev": "npm run start:server | npm run start:client",
+    "build": "webpack -p --config=webpack.prod.js"
   },
   "keywords": [],
   "author": "",
