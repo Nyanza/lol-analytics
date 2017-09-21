@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(500)
       },
       img: {
         type: Sequelize.JSON
@@ -30,6 +30,18 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      key: {
+        type: Sequelize.STRING
+      },
+      championId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Champions',
+          key: 'id',
+          as: 'championId',
+        },
       }
     });
   },

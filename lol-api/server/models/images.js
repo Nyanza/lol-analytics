@@ -5,10 +5,14 @@ module.exports = (sequelize, DataTypes) => {
     square: DataTypes.STRING,
     loading: DataTypes.ARRAY(DataTypes.STRING),
     splash: DataTypes.ARRAY(DataTypes.STRING),
+    championId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Images.belongsTo(models.Champion, {
+          foreignKey: 'championId',
+          onDelete: 'CASCADE',
+        });
       }
     }
   });

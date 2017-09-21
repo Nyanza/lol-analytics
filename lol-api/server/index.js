@@ -17,9 +17,11 @@ app.use((req, res, next) => {
 
 const ChampionsRouter = require('./routes/champions.js');
 const ImagesRouter = require('./routes/images.js');
+const SpellsRouter = require('./routes/spells.js');
 
 app.use('/api/v1/champions', ChampionsRouter);
-app.use('/api/v1/assets/images/champion', ImagesRouter);
+app.use('/api/v1/assets/images/champions', ImagesRouter);
+app.use('/api/v1/spells', SpellsRouter);
 
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);

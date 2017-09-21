@@ -20,6 +20,15 @@ module.exports = {
       splash: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
+      championId: {
+        type: Sequelize.INTEGER,
+        onDelete: 'CASCADE',
+        references: {
+          model: 'Champions',
+          key: 'id',
+          as: 'championId',
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

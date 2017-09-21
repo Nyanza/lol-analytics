@@ -1,4 +1,14 @@
 const Images = require('../models').Images;
+var request = require('request');
+
+function getImageData(imageUrl) {
+    return request({
+        url: imageUrl,
+        encoding: null,
+        json: false
+    });
+}
+
 module.exports = {
   create(req, res) {
     return Images
@@ -7,6 +17,7 @@ module.exports = {
         square: req.body.square,
         loading: req.body.loading,
         splash: req.body.splash,
+        championId: req.body.championId,
       })
       .then(champ => res.status(201).send(champ))
       .catch(error => res.status(400).send(error));
@@ -31,7 +42,7 @@ module.exports = {
   retrieveLoading(req, res) {
     return Images
       .findOne({
-        attributes: ["loading."+req.params.skinId],
+        attributes: ["loading"],
         where: {champion: req.params.championName },
         raw: true
       })
@@ -41,14 +52,14 @@ module.exports = {
             message: 'Images not Found',
           });
         }
-        return res.status(200).send(champion);
+        return res.status(200).send(champion["loading"][parseInt(req.params.skinId)]);
       })
       .catch(error => res.status(400).send(error));
   },
   retrieveSplash(req, res) {
     return Images
       .findOne({
-        attributes: [S.json("urls.splash"+req.params.skinId)],
+        attributes: [S.json("splash"+req.params.skinId)],
         where: {champion: req.params.championName },
         raw: true
       })

@@ -6,10 +6,11 @@ module.exports = {
       .create({
         name: req.body.name,
         description: req.body.description,
-        img: req.body.img,
+        img: req.body.image,
+        key: req.body.key,
         costType: req.body.costType,
         costBurn: req.body.costBurn,
-        championId: req.params.championId
+        championId: req.body.championId
       })
       .then(todoItem => res.status(201).send(todoItem))
       .catch(error => res.status(400).send(error));

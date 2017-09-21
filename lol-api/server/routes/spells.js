@@ -1,5 +1,5 @@
 const spellsController = require('../controllers').spells;
 const router = require('express').Router();
-router.post('/', imagesController.create);
+router.post('/', spellsController.create);
 
 module.exports = router;

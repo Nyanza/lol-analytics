@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start:server": "nodemon ./bin/www",
+    "start:server": "nodemon ./server/index.js",
     "start:client": "webpack-dev-server --inline",
     "start:dev": "npm run start:server | npm run start:client",
     "build": "webpack -p --config=webpack.prod.js"
@@ -26,6 +26,7 @@
     "react-router": "^3.0.5",
     "redux": "^3.7.2",
     "redux-promise": "^0.5.3",
+    "request": "^2.82.0",
     "sequelize": "^4.8.3"
   },
   "devDependencies": {

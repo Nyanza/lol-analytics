@@ -1,24 +1,39 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Champs', {
+    return queryInterface.createTable('Champions', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      key: {
+        type: Sequelize.STRING
+      },
       name: {
         type: Sequelize.STRING
       },
-      role: {
+      title: {
         type: Sequelize.STRING
       },
-      kills: {
-        type: Sequelize.INTEGER
+      skins: {
+        type: Sequelize.ARRAY(Sequelize.JSON)
       },
-      deaths: {
-        type: Sequelize.INTEGER
+      lore: {
+        type: Sequelize.STRING
+      },
+      tags: {
+        type: Sequelize.ARRAY(Sequelize.STRING)
+      },
+      partype: {
+        type: Sequelize.STRING
+      },
+      info: {
+        type: Sequelize.JSON
+      },
+      stats: {
+        type: Sequelize.JSON
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +46,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Champs');
+    return queryInterface.dropTable('Champions');
   }
 };

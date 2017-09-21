@@ -5,7 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     description: DataTypes.STRING,
     img: DataTypes.JSON,
     costType: DataTypes.STRING,
-    costBurn: DataTypes.STRING
+    costBurn: DataTypes.STRING,
+    championId: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

@@ -2,22 +2,17 @@ const Champion = require('../models').Champion;
 const S = require('sequelize');
 module.exports = {
   create(req, res) {
-
     return Champion
       .create({
         name: req.body.name,
-        img: req.body.image,
         key: req.body.key,
         title: req.body.title,
         skins: req.body.skins,
-        /*lore: req.body.lore, */
-        allytips: req.body.allytips,
-        enemytips: req.body.enemytips,
+        /*lore: req.body.lore,*/
         tags: req.body.tags,
         partype: req.body.partype,
         info: req.body.info,
-        stats: req.body.stats,
-        spells: req.body.spells
+        stats: req.body.stats
       })
       .then(champ => res.status(201).send(champ))
       .catch(error => res.status(400).send(error));
