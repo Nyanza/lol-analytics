@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const http = require('http');
+const path = require('path')
 const app = express();
 // Log requests to the console.
 app.use(logger('dev'));
@@ -22,6 +23,9 @@ const SpellsRouter = require('./routes/spells.js');
 app.use('/api/v1/champions', ChampionsRouter);
 app.use('/api/v1/assets/images/champions', ImagesRouter);
 app.use('/api/v1/spells', SpellsRouter);
+
+app.use('/dist', express.static(path.join(__dirname, '/../dist')));
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/../index.html')) );
 
 const port = parseInt(process.env.PORT, 10) || 8000;
 app.set('port', port);
