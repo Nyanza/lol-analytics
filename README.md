@@ -79,10 +79,9 @@ returns a champion as an object
 #### GET /assets/images/champions/loading/:championName/:skinId/
 
 #### GET /assets/images/champions/splash/:championName/
-
+Returns the specified image ^
 #### GET /assets/images/champions/
-
-sib what does this do ^
+Gets a list of all images available.
 
 
 ### Spells
