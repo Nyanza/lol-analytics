@@ -1,3 +1,10 @@
 
 # Images for now
-node_modules
+node_module
+
+#config
+config/*.pub
+
+
+#Mac
+.DS_Store
