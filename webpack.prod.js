@@ -22,12 +22,12 @@ module.exports = {
 	plugins: [
 		new ExtractTextPlugin('bundle.css'),
 		new webpack.DefinePlugin({
-			API_HOST: JSON.stringify('prod host placeholder')
+			API_HOST: JSON.stringify('http://lol.studio-ki.co')
 		})
 	],
 	module: {
 		rules: [{
-			test: /\.(js|jsx)$/, 
+			test: /\.(js|jsx)$/,
 			exclude: /node_modules/,
 			use: [
 			'jshint-loader',
@@ -53,7 +53,7 @@ module.exports = {
 		{
 			test: /\.(png|jpeg|jpg|gif|ttf)$/,
 			use: [
-				{ loader: 'url-loader', options: {} } 
+				{ loader: 'url-loader', options: {} }
 			]
 		}
 		]
