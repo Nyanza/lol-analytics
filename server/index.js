@@ -4,21 +4,26 @@ const bodyParser = require('body-parser');
 const http = require('http');
 const path = require('path')
 const app = express();
-// Log requests to the console.
+
+const port = parseInt(process.env.PORT, 10) || 8000;
+const server = http.createServer(app);
+
+const ChampionsRouter = require('./routes/champions.js');
+const ImagesRouter = require('./routes/images.js');
+const SpellsRouter = require('./routes/spells.js');
+
+
 app.use(logger('dev'));
-// Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+
 // All access from localhost for dev
 app.use((req, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 	next();
 });
-
-const ChampionsRouter = require('./routes/champions.js');
-const ImagesRouter = require('./routes/images.js');
-const SpellsRouter = require('./routes/spells.js');
 
 app.use('/api/v1/champions', ChampionsRouter);
 app.use('/api/v1/assets/images/champions', ImagesRouter);
@@ -27,10 +32,9 @@ app.use('/api/v1/spells', SpellsRouter);
 app.use('/dist', express.static(path.join(__dirname, '/../dist')));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/../index.html')) );
 
-const port = parseInt(process.env.PORT, 10) || 8000;
-app.set('port', port);
 
-const server = http.createServer(app);
+
+app.set('port', port);
 server.listen(port, () => {
     console.log("Express server listening on port " + port);
 });

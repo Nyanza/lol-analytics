@@ -1,6 +1,6 @@
 
 # Images for now
-node_module
+node_modules
 
 #config
 config/*.pub
