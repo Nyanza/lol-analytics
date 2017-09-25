@@ -2,3 +2,9 @@
 # Images for now
 node_modules
 .DS_STORE
+
+#config
+config/*.pub
+config/dokku_nyanza
+
+.DS_Store
