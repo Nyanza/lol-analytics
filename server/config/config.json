@@ -15,6 +15,10 @@
   },
   "production": {
       "use_env_variable": "DATABASE_URL",
+      "database": "nyazna_postgres",
+      "host": "dokku-postgres-nyazna-postgres",
+      "username": "postgres",
+      "password": "8d15d8f9dac527ff900cc8c73eb132ab",
       "dialect": "postgres"
   }
 }
