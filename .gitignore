@@ -4,7 +4,7 @@ node_module
 
 #config
 config/*.pub
-
+config/dokku_nyanza
 
 #Mac
 .DS_Store
