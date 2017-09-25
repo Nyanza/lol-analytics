@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "sib",
-    "password": "firetruck321",
-    "database": "postgres",
-    "host": "127.0.0.1",
+    "username": "postgres",
+    "password": "8d15d8f9dac527ff900cc8c73eb132ab",
+    "database": "nyazna_postgres",
+    "host": "dokku-postgres-nyazna-postgres",
     "dialect": "postgres"
   },
   "test": {
