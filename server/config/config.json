@@ -14,7 +14,6 @@
     "dialect": "postgres"
   },
   "production": {
-      "use_env_variable": "DATABASE_URL",
       "database": "nyazna_postgres",
       "host": "dokku-postgres-nyazna-postgres",
       "username": "postgres",
