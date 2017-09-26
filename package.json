@@ -13,8 +13,7 @@
     "start:client": "webpack-dev-server --inline",
     "start": "npm run start:server",
     "dev": "npm run start:server | npm run start:client",
-    "build": "webpack -p --config=webpack.prod.js",
-    "start:router": "webpack-dev-server --inline --content-base public/ --history-api-fallback --config webpack.server.config.js"
+    "build": "webpack -p --config=webpack.prod.js"
   },
   "keywords": [],
   "author": "",
