@@ -1,11 +1,17 @@
 import requests
 import json
-url = 'https://na1.api.riotgames.com/lol/static-data/v3/champions?locale=en_US&tags=allytips&tags=enemytips&tags=image&tags=info&tags=lore&tags=partype&tags=skins&tags=spells&tags=stats&tags=tags&dataById=false&api_key=RGAPI-dff83d82-3d67-4fc6-b7d6-7fd74f7cbb8c'
+import pandas as pd
+url = 'https://raw.githubusercontent.com/Nyanza/lol-analytics/master/scraping/champions.json';
 #can only run this 10 in one hour
 g = requests.get(url)
 host = "http://localhost:8000"
 path = '/assets'
 
+leagues = ["bronze", "silver", "gold", "plat", "platplus"]
+x = {}
+for league in leagues:
+    x[league] = pd.read_csv(league+".csv")
+    
 for champ in g.json()['data']:
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
     p = requests.post("http://localhost:8000/api/v1/champions/", data=json.dumps(g.json()['data'][champ]), headers=headers)
@@ -21,3 +27,15 @@ for champ in g.json()['data']:
     for spell in g.json()['data'][champ]['spells']:
         spell['championId'] = champId
         p3 = requests.post(host+'/api/v1/spells/', data=json.dumps(spell), headers=headers)
+
+    for league in leagues:
+        df = x[league][x[league]["Champion"] == key]
+        stats = {}
+        stats["champion"] = df.iloc[-1]["Champion"]
+        stats["role"] = df.iloc[-1]["Role"]
+        stats["winPercent"] = df.iloc[-1]["Win Percent"]
+        stats["playPercent"] = df.iloc[-1]["Play Percent"]
+        stats["banRate"] = df.iloc[-1]["Ban Rate"]
+        stats["league"] = league
+        stats["championId"] = champId
+        p4 = requests.post(host+'/api/v1/stats/', data=json.dumps(stats), headers=headers)

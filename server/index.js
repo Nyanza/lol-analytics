@@ -11,6 +11,7 @@ const server = http.createServer(app);
 const ChampionsRouter = require('./routes/champions.js');
 const ImagesRouter = require('./routes/images.js');
 const SpellsRouter = require('./routes/spells.js');
+const StatsRouter = require('./routes/stats.js');
 
 
 app.use(logger('dev'));
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
 app.use('/api/v1/champions', ChampionsRouter);
 app.use('/api/v1/assets/images/champions', ImagesRouter);
 app.use('/api/v1/spells', SpellsRouter);
+app.use('/api/v1/stats', StatsRouter);
 
 app.use('/dist', express.static(path.join(__dirname, '/../dist')));
 app.get('/', (req, res) => res.sendFile(path.join(__dirname + '/../index.html')) );

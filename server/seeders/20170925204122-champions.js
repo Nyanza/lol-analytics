@@ -1,20 +1,21 @@
-const request = require("request")
+const request = require("request");
 
-//request.get('http://google.com/img.png')
+const champUrl = 'https://raw.githubusercontent.com/Nyanza/lol-analytics/master/scraping/champions.json';
 
+function getChamps() {
+  return Promise(resolve, reject) {
+    request(champUrl, (err, resp) => {
+      if(err) reject(err);
+      console.log(resp)
+      resolve(resp);
+    }
+  )};
+}
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    /*
-      Add altering commands here.
-      Return a promise to correctly handle asynchronicity.
-
-      Example:
-
-    return queryInterface.bulkInsert('Person', [{
-      name: 'John Doe',
-      isBetaMember: false
-    }], {});
-    */
+    return getChamps().then((resp) => {
+        return queryInterface.bulkInsert('Champions', resp, {});
+    })
   },
 
   down: (queryInterface, Sequelize) => {

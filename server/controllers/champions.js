@@ -19,7 +19,7 @@ module.exports = {
   },
   retrieve(req, res) {
     return Champion
-      .findAll({
+      .findOne({
         attributes: ['name', 'title', 'key', 'skins', 'tags', 'partype', 'info', 'stats'],
         where: {name: req.params.championName }
       })

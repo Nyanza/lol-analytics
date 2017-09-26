@@ -21,6 +21,10 @@ module.exports = (sequelize, DataTypes) => {
           foreignKey: 'championId',
           as: 'images',
         });
+        Spells.hasOne(models.Champion, {
+          foreignKey: 'championId',
+          onDelete: 'CASCADE',
+        });
       }
     }
   });
