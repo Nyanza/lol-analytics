@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
     tags: DataTypes.ARRAY(DataTypes.STRING),
     partype: DataTypes.STRING,
     info: DataTypes.JSON,
-    stats: DataTypes.JSON
+    stats: DataTypes.JSON,
+    metrics: DataTypes.JSON
   }, {
     classMethods: {
       associate: function(models) {

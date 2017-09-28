@@ -2,7 +2,7 @@
   "development": {
     "username": "sib",
     "password": "firetruck321",
-    "database": "postgres",
+    "database": "lol",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

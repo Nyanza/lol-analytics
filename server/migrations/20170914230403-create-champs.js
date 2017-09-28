@@ -35,6 +35,9 @@ module.exports = {
       stats: {
         type: Sequelize.JSON
       },
+      metrics: {
+        type: Sequelize.JSON
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

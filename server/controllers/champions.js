@@ -12,7 +12,8 @@ module.exports = {
         tags: req.body.tags,
         partype: req.body.partype,
         info: req.body.info,
-        stats: req.body.stats
+        stats: req.body.stats,
+        metrics: req.body.metrics
       })
       .then(champ => res.status(201).send(champ))
       .catch(error => res.status(400).send(error));
@@ -20,7 +21,7 @@ module.exports = {
   retrieve(req, res) {
     return Champion
       .findOne({
-        attributes: ['name', 'title', 'key', 'skins', 'tags', 'partype', 'info', 'stats'],
+        attributes: ['name', 'title', 'key', 'skins', 'tags', 'partype', 'info', 'stats', 'metrics'],
         where: {name: req.params.championName }
       })
       .then(champion => {
