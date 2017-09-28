@@ -37,7 +37,7 @@ module.exports = {
   list(req, res) {
     return Champion
       .all({
-        attributes: ['name', 'metrics']
+        attributes: ['name', [S.json("metrics.platplus"), "metrics"]]
       })
       .then(champs => res.status(200).send(champs))
       .catch(error => res.status(400).send(error));
