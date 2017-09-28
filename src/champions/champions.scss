@@ -2,9 +2,10 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow: hidden;
 	.content {
 		width: 100%;
-		// width: 900px;
+		max-width: 1000px;
 	}
 	&:before {
 		content: '';
@@ -21,6 +22,7 @@
 		background-size:cover;
 		background-repeat: no-repeat;
 		z-index: -1;
-		filter: grayscale(60%) blur(10px);
+		filter: grayscale(60%) blur(5px);
+		transform: scale(1.03);
 	}
 }

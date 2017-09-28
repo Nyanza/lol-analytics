@@ -66,6 +66,7 @@ $bodyHeight: $tableHeight - $headerHeight;
 		border-bottom: solid 1px $gold;
 		height: $headerHeight;
 		color: $white;
+		letter-spacing: 0.2em;
 	}
 	.dataRows {
 		display: grid;
