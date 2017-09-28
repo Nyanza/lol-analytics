@@ -23,6 +23,9 @@ for champ in g.json():
             continue
         metrics = {}
         metrics["role"] = df.iloc[-1]["Role"]
+        metrics["kills"] = df.iloc[-1]["Kills"]
+        metrics["deaths"] = df.iloc[-1]["Deaths"]
+        metrics["assists"] = df.iloc[-1]["Assists"]
         metrics["winPercent"] = df.iloc[-1]["Win Percent"]
         metrics["playPercent"] = df.iloc[-1]["Play Percent"]
         metrics["banRate"] = df.iloc[-1]["Ban Rate"]
