@@ -37,7 +37,7 @@ module.exports = {
   list(req, res) {
     return Champion
       .all({
-        attributes: ['name']
+        attributes: ['name', 'metrics']
       })
       .then(champs => res.status(200).send(champs))
       .catch(error => res.status(400).send(error));
