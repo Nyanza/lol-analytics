@@ -1,11 +1,11 @@
+@import '../shared/variables.scss';
+
 .champions {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	overflow: hidden;
 	.content {
-		width: 100%;
-		max-width: 1000px;
+		width: 65vw;
 	}
 	&:before {
 		content: '';
@@ -15,12 +15,10 @@
 		position: fixed;
 		left: 0;
 		top: 0;
-		// background: url('./bg4.jpg');
-		// background: url('./bg2.jpg');
-		background: url('./bg7.jpg');
-		// background: url('./bg11.jpg');
-		background-size:cover;
-		background-repeat: no-repeat;
+		// background: url('./bg7.jpg');
+		// background-size:cover;
+		// background-repeat: no-repeat;
+		background-color: #fff; 
 		z-index: -1;
 		filter: grayscale(60%) blur(5px);
 		transform: scale(1.03);

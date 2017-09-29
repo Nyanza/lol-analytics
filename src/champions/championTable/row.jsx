@@ -25,7 +25,7 @@ class Row extends Component {
 			<div className='stat'>stat</div>
 			<div className='stat'>stat</div>
 			<div className='stat'>stat</div>
-			
+			<div className='stat'>stat</div>
 		</div>
 	}
 }
