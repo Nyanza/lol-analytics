@@ -6,14 +6,6 @@ class Row extends Component {
 		super(props);
 	}
 	render() {
-		// return <Link className='row' to={`/champions/${this.props.name}`}>
-		// 	<div className='img'>{this.props.img}</div>
-		// 	<div className='name'>{this.props.name}</div>
-		// 	<div className='stat'>stat</div>
-		// 	<div className='stat'>stat</div>
-		// 	<div className='stat'>stat</div>
-			
-		// </Link>
 		return <div className='row'>
 			<div className='img'>{this.props.img}</div>
 			<div className='name'>

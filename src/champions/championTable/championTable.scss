@@ -53,15 +53,11 @@ $tableRadius: 0.5em;
 				color: $gold;
 				height: 100%; width: 100%;
 				cursor: pointer;
-				transition: inherit;		
-			}
-			&:hover {
-				// background-color: lighten($blue, 10%);
-
-				a {
+				transition: inherit;	
+				&:hover {
 					color: $blue;
 					text-shadow: 0 0 0.2em $gold;
-				}
+				}	
 			}
 		}
 	}
