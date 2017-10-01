@@ -6,8 +6,9 @@ class Row extends Component {
 		super(props);
 	}
 	render() {
+		console.log()
 		return <div className='row'>
-			<div className='img'>{this.props.img}</div>
+			<img src={this.props.img} alt={this.props.name} className='image'/>
 			<div className='name'>
 				<Link to={ChampRoutes.profile(this.props.name).to}
 					target='_blank'>
