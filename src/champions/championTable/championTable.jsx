@@ -24,7 +24,7 @@ class ChampionTable extends Component {
 			</LazyLoad>
 	}
 	renderHeaderRow() {
-		const headers = ['', 'name', 'stat1', 'stat2', 'stat3', 'stat4'];
+		const headers = ['', 'name', 'Win Rate', 'Ban Rate', 'Play Rate'];
 		return headers.map((header, index) => {
 			return <div key={index}>
 				{header}

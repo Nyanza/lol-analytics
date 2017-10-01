@@ -18,7 +18,8 @@ $tableRadius: 0.5em;
 	.row {
 		position: relative;
 		display: grid;
-		grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
+		// grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
+		grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
 		grid-gap: 0.5vw;
 		height: $rowHeight;
 		padding: $rowPadding;
