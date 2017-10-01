@@ -5,8 +5,14 @@ class Row extends Component {
 	constructor(props) {
 		super(props);
 	}
+	renderStats() {
+		return Object.keys(this.props.stats).map((key, index) => {
+			return <div key={index} className={`stat {key}`}>
+				{this.props.stats[key]}
+			</div>
+		});
+	}
 	render() {
-		console.log()
 		return <div className='row'>
 			<img src={this.props.img} alt={this.props.name} className='image'/>
 			<div className='name'>
@@ -15,10 +21,7 @@ class Row extends Component {
 					{this.props.name}
 				</Link>
 			</div>
-			<div className='stat'>stat</div>
-			<div className='stat'>stat</div>
-			<div className='stat'>stat</div>
-			<div className='stat'>stat</div>
+			{this.renderStats()}
 		</div>
 	}
 }
