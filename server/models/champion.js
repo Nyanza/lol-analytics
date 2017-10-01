@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     partype: DataTypes.STRING,
     info: DataTypes.JSON,
     stats: DataTypes.JSON,
-    metrics: DataTypes.JSON
+    metrics: DataTypes.JSON,
+    defaultMetrics: DataTypes.JSON,
+    squareImg: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {

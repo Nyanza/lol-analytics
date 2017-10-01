@@ -13,7 +13,9 @@ module.exports = {
         partype: req.body.partype,
         info: req.body.info,
         stats: req.body.stats,
-        metrics: req.body.metrics
+        metrics: req.body.metrics,
+        defaultMetrics: req.body.defaultMetrics,
+        squareImg: req.body.squareImg
       })
       .then(champ => res.status(201).send(champ))
       .catch(error => res.status(400).send(error));
@@ -21,7 +23,7 @@ module.exports = {
   retrieve(req, res) {
     return Champion
       .findOne({
-        attributes: ['name', 'title', 'key', 'skins', 'tags', 'partype', 'info', 'stats', 'metrics'],
+        attributes: ['name', 'title', 'key', 'skins', 'info', 'metrics', 'squareImg'],
         where: {name: req.params.championName }
       })
       .then(champion => {
@@ -37,7 +39,7 @@ module.exports = {
   list(req, res) {
     return Champion
       .all({
-        attributes: ['name', [S.json("metrics.platplus"), "metrics"]]
+        attributes: ['name', ['defaultMetrics', 'metrics']]
       })
       .then(champs => res.status(200).send(champs))
       .catch(error => res.status(400).send(error));

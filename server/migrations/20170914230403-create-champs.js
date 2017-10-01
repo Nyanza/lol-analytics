@@ -38,6 +38,12 @@ module.exports = {
       metrics: {
         type: Sequelize.JSON
       },
+      defaultMetrics: {
+        type: Sequelize.JSON
+      },
+      squareImg: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -15,7 +15,7 @@ module.exports = {
         type: Sequelize.STRING(500)
       },
       img: {
-        type: Sequelize.JSON
+        type: Sequelize.ARRAY(Sequelize.STRING)
       },
       costType: {
         type: Sequelize.STRING
