@@ -2,20 +2,13 @@ import { connect } from 'react-redux';
 import * as actions from '../champions.actions.js';
 import ChampionProfile from './championProfile.jsx';
 
-ChampionProfile.defaultProps = {
-	name: '',
-	title: '',
-	img: '',
-	skins: []
-};
-
 const stateToProps = (state) => ({
-	name: state.champions.profileStats.name,
-	title: state.champions.profileStats.title,
-	img: state.champions.profileStats.img,
-	skins: state.champions.profileStats.skins,
-	tags: state.champions.profileStats.tags,
-	stats: state.champions.profileStats.stats
+	name: state.champions.profile.name,
+	title: state.champions.profile.title,
+	defaultSplash: state.champions.profile.skins[0].splash,
+	skins: state.champions.profile.skins,
+	tags: state.champions.profile.tags,
+	stats: state.champions.profile.stats
 });
 
 const dispatchToProps = (dispatch) => {

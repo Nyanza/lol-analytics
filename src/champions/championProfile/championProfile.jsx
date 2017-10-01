@@ -20,17 +20,32 @@ class ChampionProfile extends Component {
 			</div>
 		})
 	}
+	renderHeader() {
+		return <div className='header'>
+			<img src={this.props.defaultSplash} alt={this.props.name} className='image'/>
+			<div className='headline'>
+				<div className='name'>{this.props.name}</div>
+				<div className='title'>{this.props.title}</div>
+			</div>
+			
+		</div>
+	}
 	render() {
-		console.log()
+		// console.log(this.props)
 		return <div className="championProfile">
-			{this.props.params.name}
-			<h1>{this.props.name}</h1>
+			{this.renderHeader()}
 			<div>{this.props.title}</div>
 			{this.renderSkins()}
 		</div>;
-					// <div>tags: {this.props.tags.join(', ')}</div>
-			// <div>stats: {JSON.stringify(this.props.name, null, 4)}</div>
 	}
 }
+
+ChampionProfile.defaultProps = {
+	name: '',
+	title: '',
+	img: '',
+	skins: [],
+	defaultSplash: '' 
+};
 
 export default ChampionProfile;
