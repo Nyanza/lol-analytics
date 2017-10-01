@@ -10,12 +10,12 @@ ChampionProfile.defaultProps = {
 };
 
 const stateToProps = (state) => ({
-	name: state.champions.selected.name,
-	title: state.champions.selected.title,
-	img: state.champions.selected.img,
-	skins: state.champions.selected.skins,
-	// tags: state.champions.selected.tags,
-	// stats: state.champions.selected.stats,
+	name: state.champions.profileStats.name,
+	title: state.champions.profileStats.title,
+	img: state.champions.profileStats.img,
+	skins: state.champions.profileStats.skins,
+	tags: state.champions.profileStats.tags,
+	stats: state.champions.profileStats.stats
 });
 
 const dispatchToProps = (dispatch) => {

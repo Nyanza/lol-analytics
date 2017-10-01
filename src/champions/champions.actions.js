@@ -15,3 +15,24 @@ export function fetchChampion(id) {
 		payload: axios.get(API.champion(id))
 	}
 }
+
+export function getChampionSplashSource(id) {
+	return {
+		type: "GET_CHAMPION_SPLASH_SOURCE",
+		payload: API.championSplash(id)
+	}
+}
+
+export function getChampionLoaderSource(id) {
+	return {
+		type: "GET_CHAMPION_LOADER_SOURCE",
+		payload: API.championLoader(id)
+	}
+}
+
+export function getChampionSquareSource(id) {
+	return {
+		type: "GET_CHAMPION_SQUARE_SOURCE",
+		payload: API.championSquare(id)
+	}
+}

@@ -21,7 +21,7 @@ class ChampionProfile extends Component {
 		})
 	}
 	render() {
-		console.log(this.props.skins)
+		console.log()
 		return <div className="championProfile">
 			{this.props.params.name}
 			<h1>{this.props.name}</h1>
