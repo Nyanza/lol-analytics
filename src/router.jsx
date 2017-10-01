@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { IndexRoute, Router, Route, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
+import Nav from './nav/nav.jsx';
 import Champions from './champions/champions.container.jsx';
 import ChampionProfile from './champions/championProfile/championProfile.container.jsx';
 
@@ -11,6 +12,7 @@ import './index.scss';
 class App extends Component {
 	render() {
 		return <div className="app">
+			<Nav />
 			{this.props.children}
 		</div>;
 	}

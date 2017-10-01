@@ -20,7 +20,7 @@ class ChampionTable extends Component {
 			onClick={ () => {this.handleClick(champ.name) }}/>
 	}
 	renderHeaderRow() {
-		const headers = ['', 'name', 'stat1', 'stat2', 'stat3'];
+		const headers = ['', 'name', 'stat1', 'stat2', 'stat3', 'stat4'];
 		return headers.map((header, index) => {
 			return <div key={index}>
 				{header}

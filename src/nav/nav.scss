@@ -1,0 +1,53 @@
+@import '../shared/variables.scss';
+$linkSize: $navWidth * 0.75;
+
+.nav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	width: $navWidth;
+	height: 100vh;
+
+	background-color: $black;
+	color: rgba($white, 0.6);
+	.link {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 8px 0;
+
+		text-decoration: none;
+		text-transform: uppercase;
+		height: $linkSize;
+		width: $linkSize;
+		color: $white;
+		background-color: lighten($blackLight, 0%);
+		transition: 0.4s all;
+		i, div {
+
+		}
+		i {
+			font-size: 2em;
+		}
+		div {
+			text-align: center;
+			font-size: 0.7em;
+			word-wrap: break-word;
+			font-weight: bold;
+		}
+		// &:hover, &.active {
+		&.active {
+			border-radius: 5px;
+			background-color: $blue;
+			color: darken($blue, 20%);
+			// text-shadow: 1px 1px 5px darken($blue, 20%);
+			
+		}
+	}
+}

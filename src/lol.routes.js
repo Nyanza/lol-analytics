@@ -6,7 +6,7 @@ const Routes = {
 		profile: (name) => {
 			return {
 				get: '/champions/:name',
-				set: `/champions/${name}`
+				to: `/champions/${name}`
 			}
 		}
 	}

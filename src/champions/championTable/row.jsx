@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-
+import { champions as ChampRoutes } from '../../lol.routes.js';
 class Row extends Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
-		// return <Link className='row' to={`/champions/${this.props.name}`}>
-		// 	<div className='img'>{this.props.img}</div>
-		// 	<div className='name'>{this.props.name}</div>
-		// 	<div className='stat'>stat</div>
-		// 	<div className='stat'>stat</div>
-		// 	<div className='stat'>stat</div>
-			
-		// </Link>
 		return <div className='row'>
 			<div className='img'>{this.props.img}</div>
 			<div className='name'>
-				<Link to={`/champions/${this.props.name}`}
+				<Link to={ChampRoutes.profile(this.props.name).to}
 					target='_blank'>
 					{this.props.name}
 				</Link>
@@ -25,7 +17,7 @@ class Row extends Component {
 			<div className='stat'>stat</div>
 			<div className='stat'>stat</div>
 			<div className='stat'>stat</div>
-			
+			<div className='stat'>stat</div>
 		</div>
 	}
 }
