@@ -39,7 +39,7 @@ module.exports = {
   list(req, res) {
     return Champion
       .all({
-        attributes: ['name', ['defaultMetrics', 'metrics']]
+        attributes: ['name', ['defaultMetrics', 'metrics'], 'squareImg']
       })
       .then(champs => res.status(200).send(champs))
       .catch(error => res.status(400).send(error));
