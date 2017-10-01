@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import LazyLoad from 'react-lazyload';
 
 import Row from './row.jsx';
 import './championTable.scss';
+
 
 class ChampionTable extends Component {
 	constructor(props) {
@@ -14,10 +16,12 @@ class ChampionTable extends Component {
 		});
 	}
 	renderChampion(champ, index) {
-		return <Row key={index}
-			name={champ.name}
-			img={champ.img}
-			onClick={ () => {this.handleClick(champ.name) }}/>
+		return <LazyLoad key={index}>
+			<Row name={champ.name}
+				img={champ.squareImg}
+				stats={champ.metrics}
+				onClick={ () => {this.handleClick(champ.name) }}/>
+			</LazyLoad>
 	}
 	renderHeaderRow() {
 		const headers = ['', 'name', 'stat1', 'stat2', 'stat3', 'stat4'];
@@ -31,7 +35,6 @@ class ChampionTable extends Component {
 		this.props.fetchChampion(id);
 	}
 	render() {
-		console.log(this.props.selected)
 		return <div className="championTable">
 			<div className='headerRow row'>
 				{this.renderHeaderRow()}
