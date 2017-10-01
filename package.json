@@ -8,7 +8,7 @@
     "npm": "5.2.0"
   },
   "scripts": {
-    "start:server": "nodemon ./server/index.js",
+    "start:server": "node ./server/index.js",
     "init:db": "sequelize db:migrate:undo:all && sequelize db:migrate && python ./initdb.py",
     "start:client": "webpack-dev-server --inline",
     "start": "npm run start:server",
