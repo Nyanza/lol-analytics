@@ -1,3 +1,25 @@
+@import '../../shared/variables.scss';
+
 .championProfile {
 	
+	background-color: $blackDark;
+	color: $white;
+	min-height: 100vh;
+	.content {
+		padding: 0 1vw;
+	}
+	.content, .metrics {
+		display: grid;
+		grid-auto-flow: row;
+		grid-gap: 1vw;
+	}
+	.metrics {
+		.title {
+			font-size: 1.5vw;
+		}
+		&>* {
+			// border: solid red 1px;
+		}
+	}
 }
+

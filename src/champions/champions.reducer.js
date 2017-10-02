@@ -1,9 +1,15 @@
 const initialState = {
 	all: [],
-	profileStats: {},
-	splashSrc: '',
-	loaderSrc: '',
-	squareSrc: ''
+	profile: {
+		name: '',
+		title: '',
+		key: '',
+		skins: [
+			{loading: '', splash: '', num: 0, id: 0, name: ''}
+		],
+		info: {},
+		metrics: {}
+	},
 };
 
 export default function pokedexReducer(state=initialState, action) {
@@ -12,16 +18,7 @@ export default function pokedexReducer(state=initialState, action) {
 			return {...state, all: action.payload.data };
 		}
 		case "FETCH_CHAMPION": {
-			return {...state, profileStats: action.payload.data}
-		}
-		case "GET_CHAMPION_SPLASH_SOURCE": {
-			return {...state, splashSrc: action.payload}
-		}
-		case "GET_CHAMPION_LOADER_SOURCE": {
-			return {...state, loaderSrc: action.payload}
-		}
-		case "GET_CHAMPION_SQUARE_SOURCE": {
-			return {...state, squareSrc: action.payload}
+			return {...state, profile: action.payload.data}
 		}
 		default: {
 			console.log("Action not found: ", action.type);
