@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import Nav from './nav/nav.jsx';
 import Champions from './champions/champions.container.jsx';
 import ChampionProfile from './champions/championProfile/championProfile.container.jsx';
+import Matches from './matches/matches.jsx';
+import Rankings from './rankings/rankings.jsx';
 
 import Routes from './lol.routes.js';
 import './index.scss';
@@ -24,6 +26,8 @@ const Root = ({ store }) => (
 			<Route path='/' component={App}>
 				<IndexRoute component={Champions}></IndexRoute>
 				<Route path={Routes.champions.profile().get} component={ChampionProfile} />			
+				<Route path={Routes.matches.home()} component={Matches} />
+				<Route path={Routes.rankings.home()} component={Rankings} />
 			</Route>
 		</Router>
 	</Provider>	

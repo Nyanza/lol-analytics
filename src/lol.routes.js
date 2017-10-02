@@ -9,6 +9,16 @@ const Routes = {
 				to: `/champions/${name}`
 			}
 		}
+	},
+	matches: {
+		home: () => {
+			return '/matches';
+		}
+	},
+	rankings: {
+		home: () => {
+			return '/rankings';
+		}
 	}
 };
 
