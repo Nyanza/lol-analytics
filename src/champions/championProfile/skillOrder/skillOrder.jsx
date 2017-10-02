@@ -13,17 +13,17 @@ class SkillOrder extends Component {
 		this.setState({ rowCells: cells });
 	}
 	renderRows() {
-		const skills = ['q', 'w', 'e', 'r'];
+		const skills = Object.keys(this.props.spells);
 		const rowLength = this.props.order.length;
+
 		return skills.map((skill, index) => {
 			return this.renderRow(skill, index, rowLength);
 		});
 	}
 	renderRow(skillKey, index, rowLength) {
-		// <div className='image cell'>skill img</div>
-		const spell = this.props.skills[skillKey]
+		const spell = this.props.spells[skillKey];
 		return <div key={index} className='row'>
-			<img src={spell.image} alt={spell.name}/>
+			<img src={spell.image} alt={spell.name} className='cell image'/>
 			{this.renderSkillCells(skillKey)}
 		</div>
 	}

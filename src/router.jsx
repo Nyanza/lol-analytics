@@ -21,18 +21,6 @@ class App extends Component {
 	}
 }
 
-// const Root = ({ store }) => (
-// 	<Provider store={store}>
-// 		<Router history={browserHistory}>
-// 			<Route path='/' component={App}>
-// 				<IndexRoute component={Champions}></IndexRoute>
-// 				<Route path={Routes.champions.profile().get} component={ChampionProfile} />			
-// 				<Route path={Routes.matches.home()} component={Matches} />
-// 				<Route path={Routes.rankings.home()} component={Rankings} />
-// 			</Route>
-// 		</Router>
-// 	</Provider>	
-// )
 const Root = ({ store }) => (
 	<Provider store={store}>
 		<Router history={browserHistory}>
