@@ -1,0 +1,21 @@
+@import '../../../shared/variables.scss';
+
+.statsTable {
+	letter-spacing: $letterSpace;
+	display: grid;
+	grid-auto-flow: column;
+	grid-gap: 1vw;
+	text-transform: capitalize;
+	.cell {
+		height: 9vw;
+		width: 9vw;
+		.value{
+			font-size: 2vw;
+			margin-bottom: 0.6vw;
+		}
+		.name {
+			color: $gray;
+			text-transform: uppercase;	
+		}
+	}
+}

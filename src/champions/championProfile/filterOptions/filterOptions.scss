@@ -1,0 +1,47 @@
+@import '../../../shared/variables.scss';
+
+.filterOptions {
+	letter-spacing: $letterSpace;
+	&>div{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-transform: uppercase;
+		margin: 2vw 0;
+		.title {
+			font-size: 1.5vw;
+			margin-bottom: 0.5vw;
+		}
+		.options {
+			display: grid;
+			grid-auto-flow: column;
+			grid-gap: 1vw;
+		}
+		.option {
+			border: $gray 0.2em solid;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: relative;
+			
+			height: 3vw;
+			width: 8vw;
+			transition: 0.2s all;
+			input {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				opacity: 0;
+				cursor: pointer;
+			}
+			&.active {
+				background-color: $blue;
+				border-color: $blue;
+				color: darken($blue, 20%);
+				font-weight: bold;
+			}
+		}	
+	}
+}

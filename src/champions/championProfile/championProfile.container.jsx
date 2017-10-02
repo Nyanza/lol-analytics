@@ -6,9 +6,7 @@ const stateToProps = (state) => ({
 	name: state.champions.profile.name,
 	title: state.champions.profile.title,
 	defaultSplash: state.champions.profile.skins[0].splash,
-	skins: state.champions.profile.skins,
-	tags: state.champions.profile.tags,
-	stats: state.champions.profile.stats
+	stats: state.champions.profile.metrics
 });
 
 const dispatchToProps = (dispatch) => {
