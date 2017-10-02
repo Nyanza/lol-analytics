@@ -6,13 +6,13 @@ $nameSize: 5vw;
 	display: flex;
 	align-items: center;
 	position: relative;
-	height: 400px;
+	height: 700px;
 	padding: 0 8vw;
 	overflow: hidden;
 
 	.image {
 		position: absolute;
-		top: 0;
+		top: -5%;
 		left: 0;
 		width: 100%;
 		height: auto;

@@ -1,14 +1,17 @@
 @import '../../../shared/variables.scss';
 
+$cellSize: 10vw;
+
 .statsTable {
 	letter-spacing: $letterSpace;
 	display: grid;
-	grid-auto-flow: column;
-	grid-gap: 1vw;
+	grid-template-columns: repeat(auto-fill, $cellSize);
+	grid-gap: 1em;
+	justify-items: center;
 	text-transform: capitalize;
 	.cell {
-		height: 9vw;
-		width: 9vw;
+		height: $cellSize;
+		width: 100%;
 		.value{
 			font-size: 2vw;
 			margin-bottom: 0.6vw;

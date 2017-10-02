@@ -4,9 +4,6 @@ import PropTypes from 'prop-types';
 import './statsTable.scss';
 
 class StatsTable extends Component {
-	componentDidMount() {
-
-	}
 	renderCells() {
 		return Object.keys(this.props.stats).map((statKey, index) => {
 			return this.renderCell(statKey, this.props.stats[statKey], index);
@@ -28,5 +25,3 @@ class StatsTable extends Component {
 
 
 export default StatsTable;
-
-

@@ -1,0 +1,26 @@
+@import '../../../shared/variables.scss';
+
+.skillOrder {
+	.title {
+		text-transform: capitalize;
+		letter-spacing: $letterSpace;
+	}
+	.headerRow{
+
+	}
+	.row {
+		display: grid;
+		grid-template-columns: repeat(19, 1fr);
+		.cell {
+			// border: red solid 1px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 4vw;
+			text-transform: uppercase;
+			&.active {
+				background-color: $blackLight;
+			}
+		}
+	}
+}

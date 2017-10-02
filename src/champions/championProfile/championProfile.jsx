@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Header from './header/header.jsx';
 import FilterOptions from './filterOptions/filterOptions.jsx';
 import StatsTable from './statsTable/statsTable.jsx';
+import SkillOrder from './skillOrder/skillOrder.jsx';
 import './championProfile.scss';
 
 class ChampionProfile extends Component {
@@ -19,13 +20,16 @@ class ChampionProfile extends Component {
 	renderContent() {
 		return <div className='content'>
 			{this.renderFilters()}
-			{this.renderStatsTable()}
+			{this.renderMetrics()}
 		</div>
 	}
-	renderStatsTable() {
+	renderMetrics() {
 		if(this.state.lane == '' && this.state.rank == '') return;
-		const filteredStats = this.props.stats[this.state.rank][this.state.lane].stats;
-		return <StatsTable stats={filteredStats}/>
+		const filteredMetrics = this.props.stats[this.state.rank][this.state.lane];
+		return <div className='metrics'>
+			<StatsTable stats={filteredMetrics.stats}/>
+			<SkillOrder order={filteredMetrics.skill_order} />
+		</div>
 	}
 	renderFilters() {
 		if(!this.props.stats.platplus) return;
@@ -55,7 +59,6 @@ class ChampionProfile extends Component {
 			subheadline={this.props.title}/>
 	}
 	render() {
-		console.log(this.state)
 		return <div className="championProfile">
 			{this.renderHeader()}
 			{this.renderContent()}
