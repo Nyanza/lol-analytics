@@ -19,10 +19,12 @@ class SkillOrder extends Component {
 			return this.renderRow(skill, index, rowLength);
 		});
 	}
-	renderRow(skill, index, rowLength) {
+	renderRow(skillKey, index, rowLength) {
+		// <div className='image cell'>skill img</div>
+		const spell = this.props.skills[skillKey]
 		return <div key={index} className='row'>
-			<div className='image cell'>skill img</div>
-			{this.renderSkillCells(skill)}
+			<img src={spell.image} alt={spell.name}/>
+			{this.renderSkillCells(skillKey)}
 		</div>
 	}
 	renderHeaderRow() {
@@ -61,7 +63,8 @@ class SkillOrder extends Component {
 }
 
 SkillOrder.defaultProps = {
-	order: []
+	order: [],
+	spells: {}
 };
 
 export default SkillOrder;

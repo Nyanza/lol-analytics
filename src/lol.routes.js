@@ -1,7 +1,12 @@
 const Routes = {
-	champions: {
+	home: {
 		home: () => {
 			return '/';
+		}
+	},
+	champions: {
+		home: () => {
+			return '/champions';
 		},
 		profile: (name) => {
 			return {

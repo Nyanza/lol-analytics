@@ -28,7 +28,7 @@ class ChampionProfile extends Component {
 		const filteredMetrics = this.props.stats[this.state.rank][this.state.lane];
 		return <div className='metrics'>
 			<StatsTable stats={filteredMetrics.stats}/>
-			<SkillOrder order={filteredMetrics.skill_order} />
+			<SkillOrder order={filteredMetrics.skill_order} spells={this.props.spells}/>
 		</div>
 	}
 	renderFilters() {
@@ -71,7 +71,8 @@ ChampionProfile.defaultProps = {
 	title: '',
 	img: '',
 	defaultSplash: '' ,
-	stats: {}
+	stats: {},
+	spells: {}
 };
 
 export default ChampionProfile;

@@ -1,11 +1,11 @@
 import Routes from '../lol.routes.js';
 
 const Metadata = [
-	// {
-	// 	icon: 'ion-android-home',
-	// 	label: 'home',
-	// 	to: Routes.champions.home(),
-	// },
+	{
+		icon: 'ion-android-home',
+		label: 'home',
+		to: Routes.home.home(),
+	},
 	{
 		icon: 'ion-android-star',
 		label: 'champions',
