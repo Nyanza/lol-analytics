@@ -1,46 +1,17 @@
 @import '../../shared/variables.scss';
-$nameSize: 5vw;
 
 .championProfile {
-	.header {
-		display: flex;
-		align-items: center;
-		position: relative;
-		height: 350px;
-		padding: 0 8vw;
-		overflow: hidden;
+	background-color: $blackDark;
+	height: 100vh;
 
-		.image {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: auto;
-			z-index: -1;
-			filter: grayscale(50%);
-		}
-		.headline {
-			// display: flex;
-			@include titleFont();
-			font-weight: bold;
-			color: $goldDullLight;
-			text-transform: uppercase;
-			
-			.name, .title {
-				text-shadow: 0.1vw 0.5vw 0.5em $blackLight;
-			}
-			.name {
-				font-size: $nameSize;
-				margin-right: 2vw;
-				display: inline-block;
-				color: rgb(103, 71, 31);
-				background: -webkit-linear-gradient(bottom, rgb(103, 71, 31), rgb(203, 172, 98));
-				-webkit-background-clip: text; -webkit-text-fill-color: transparent;
-			}
-			.title {
-				font-size: $nameSize * 0.4;
-			}
-		}
-			
-	}
 }
+
+
+
+
+
+
+
+
+
+

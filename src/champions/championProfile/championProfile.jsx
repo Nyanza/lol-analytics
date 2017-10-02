@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import Header from './header/header.jsx';
 import './championProfile.scss';
 
 class ChampionProfile extends Component {
@@ -21,21 +22,17 @@ class ChampionProfile extends Component {
 		})
 	}
 	renderHeader() {
-		return <div className='header'>
-			<img src={this.props.defaultSplash} alt={this.props.name} className='image'/>
-			<div className='headline'>
-				<div className='name'>{this.props.name}</div>
-				<div className='title'>{this.props.title}</div>
-			</div>
-			
-		</div>
+		return <Header 
+			img={this.props.defaultSplash}
+			headline={this.props.name}
+			subheadline={this.props.title}/>
 	}
 	render() {
-		// console.log(this.props)
 		return <div className="championProfile">
 			{this.renderHeader()}
-			<div>{this.props.title}</div>
-			{this.renderSkins()}
+			<div className='content'>
+				
+			</div>
 		</div>;
 	}
 }
