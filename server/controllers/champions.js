@@ -1,4 +1,5 @@
 const Champion = require('../models').Champion;
+const Spells = require('../models').Spells
 const S = require('sequelize');
 module.exports = {
   create(req, res) {
@@ -14,6 +15,7 @@ module.exports = {
         info: req.body.info,
         stats: req.body.stats,
         metrics: req.body.metrics,
+        spells: req.body.spells,
         defaultMetrics: req.body.defaultMetrics,
         squareImg: req.body.squareImg
       })
@@ -23,7 +25,7 @@ module.exports = {
   retrieve(req, res) {
     return Champion
       .findOne({
-        attributes: ['name', 'title', 'key', 'skins', 'info', 'metrics', 'squareImg'],
+        attributes: ['name', 'title', 'key', 'skins', 'info', 'metrics', 'spells', 'squareImg', 'id'],
         where: {name: req.params.championName }
       })
       .then(champion => {
@@ -34,7 +36,10 @@ module.exports = {
         }
         return res.status(200).send(champion);
       })
-      .catch(error => res.status(400).send(error));
+      .catch(error => {
+        console.log(error)
+        res.status(400).send(error)
+      });
   },
   list(req, res) {
     return Champion

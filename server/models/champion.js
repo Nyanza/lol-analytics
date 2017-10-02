@@ -11,23 +11,20 @@ module.exports = (sequelize, DataTypes) => {
     info: DataTypes.JSON,
     stats: DataTypes.JSON,
     metrics: DataTypes.JSON,
+    spells: DataTypes.JSON,
     defaultMetrics: DataTypes.JSON,
     squareImg: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
         Champion.hasMany(models.Spells, {
-          foreignKey: 'championId',
-          as: 'spells',
+          foreignKey: 'championId'
         });
         Champion.hasMany(models.Images, {
           foreignKey: 'championId',
           as: 'images',
         });
-        Spells.hasOne(models.Champion, {
-          foreignKey: 'championId',
-          onDelete: 'CASCADE',
-        });
+
       }
     }
   });

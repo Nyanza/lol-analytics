@@ -38,6 +38,9 @@ module.exports = {
       metrics: {
         type: Sequelize.JSON
       },
+      spells: {
+        type: Sequelize.JSON
+      },
       defaultMetrics: {
         type: Sequelize.JSON
       },
