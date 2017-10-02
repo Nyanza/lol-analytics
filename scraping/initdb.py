@@ -42,15 +42,18 @@ def insert_to_db(name, info, counter):
         skin['loading'] = path + '/loading/' + ext
         skin['splash'] = path + '/splash/' + ext
     info['skins'] = skins
-    p = requests.post(host+"/api/v1/champions/", data=json.dumps(info), headers=headers)
-
-    champId = p.json()["id"]
+    counter = 0
+    spells = {'q': {}, 'w': {}, 'e': {}, 'r': {}}
     for spell in info['spells']:
-        spell['championId'] = champId
-        spell['image'] = skill_images
-        p3 = requests.post(host+'/api/v1/spells/', data=json.dumps(spell), headers=headers)
+        skill = 'qwer'[counter]
+        spells[skill]['image'] = skill_images[counter]
+        spells[skill]['description'] = spell['description']
+        spells[skill]['name'] = spell['name']
+        counter += 1
+    info['spells'] = spells
+    p = requests.post(host+"/api/v1/champions/", data=json.dumps(info), headers=headers)
     print(name)
-    print(p3)
+    print(p)
 
 counter = 0
 for name, info in sorted_champ:
