@@ -13,16 +13,18 @@ class SkillOrder extends Component {
 		this.setState({ rowCells: cells });
 	}
 	renderRows() {
-		const skills = ['q', 'w', 'e', 'r'];
+		const skills = Object.keys(this.props.spells);
 		const rowLength = this.props.order.length;
+
 		return skills.map((skill, index) => {
 			return this.renderRow(skill, index, rowLength);
 		});
 	}
-	renderRow(skill, index, rowLength) {
+	renderRow(skillKey, index, rowLength) {
+		const spell = this.props.spells[skillKey];
 		return <div key={index} className='row'>
-			<div className='image cell'>skill img</div>
-			{this.renderSkillCells(skill)}
+			<img src={spell.image} alt={spell.name} className='cell image'/>
+			{this.renderSkillCells(skillKey)}
 		</div>
 	}
 	renderHeaderRow() {
@@ -61,7 +63,8 @@ class SkillOrder extends Component {
 }
 
 SkillOrder.defaultProps = {
-	order: []
+	order: [],
+	spells: {}
 };
 
 export default SkillOrder;

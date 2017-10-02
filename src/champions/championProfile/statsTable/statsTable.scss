@@ -6,7 +6,7 @@ $cellSize: 10vw;
 	letter-spacing: $letterSpace;
 	display: grid;
 	grid-template-columns: repeat(auto-fill, $cellSize);
-	grid-gap: 1em;
+	grid-gap: 0.5vw;
 	justify-items: center;
 	text-transform: capitalize;
 	.cell {
