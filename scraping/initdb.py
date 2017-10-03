@@ -1,6 +1,5 @@
 import requests
 import json
-import pandas as pd
 url = 'https://raw.githubusercontent.com/Nyanza/lol-analytics/master/scraping/champions.json';
 g = requests.get(url)
 host = "http://localhost:8000"
