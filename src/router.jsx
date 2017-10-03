@@ -15,7 +15,7 @@ import './index.scss';
 class App extends Component {
 	render() {
 		return <div className="app">
-			<Nav />
+			<Nav current={this.props.location.pathname}/>
 			{this.props.children}
 		</div>;
 	}
