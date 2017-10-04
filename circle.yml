@@ -1,0 +1,17 @@
+general:
+  branches:
+    only:
+      - master
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - '[[ ! -e "$(git rev-parse --git-dir)/shallow" ]] || git fetch --unshallow'
+      - sh ./deploy.sh
+dependencies:
+    override:
+        - echo 'dependencies'
+test:
+    override:
+        - echo 'test'
