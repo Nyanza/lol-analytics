@@ -14,13 +14,19 @@ class SearchBar extends Component {
 		this.props.onChange(e.target.value);
 	}
 	render() {
-		return <div className="searchBar">
-			<input
-				type="text"
-				onChange={this.handleChange}
-				placeholder={this.props.placeholder}
-				value={this.state.searchString}/>
-		</div>;
+		// return <div className="searchBar">
+		// 	<input
+		// 		type="text"
+		// 		onChange={this.handleChange}
+		// 		placeholder={this.props.placeholder}
+		// 		value={this.state.searchString}/>
+		// </div>;
+		return <input
+			className="searchBar"
+			type="text"
+			onChange={this.handleChange}
+			placeholder={this.props.placeholder}
+			value={this.state.searchString}/>
 	}
 }
 
