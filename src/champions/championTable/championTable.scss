@@ -9,16 +9,15 @@ $tableRadius: 0.5em;
 .championTable {
 	
 	color: $goldDull;
-	// height: $tableHeight;
 	display: flex;
 	flex-direction: column;
+	font-size: 1.2vw;
 	.headerRow, .dataRows {
 		box-shadow: 1em 1em 4em $shadow;
 	}
 	.row {
 		position: relative;
 		display: grid;
-		// grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr;
 		grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
 		grid-gap: 0.5vw;
 		height: $rowHeight;
@@ -82,7 +81,7 @@ $tableRadius: 0.5em;
 		display: grid;
 		grid-auto-flow: row;
 		overflow: auto;
-		height: $bodyHeight;
+		max-height: $bodyHeight;
 		border-bottom-right-radius: $tableRadius;
 		border-bottom-left-radius: $tableRadius;
 	}
