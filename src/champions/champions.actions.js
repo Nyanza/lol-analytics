@@ -9,6 +9,13 @@ export function fetchAllChampions() {
 	}
 }
 
+export function filterChampions(filteredList) {
+	return {
+		type: "FILTER_CHAMPIONS",
+		payload: filteredList
+	}
+}
+
 export function fetchChampion(id) {
 	return {
 		type: "FETCH_CHAMPION",
@@ -36,3 +43,4 @@ export function getChampionSquareSource(id) {
 		payload: API.championSquare(id)
 	}
 }
+

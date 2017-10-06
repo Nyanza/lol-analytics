@@ -1,5 +1,6 @@
 const initialState = {
-	all: [],
+	allRaw: [],
+	allFiltered: [],
 	profile: {
 		name: '',
 		title: '',
@@ -15,7 +16,14 @@ const initialState = {
 export default function pokedexReducer(state=initialState, action) {
 	switch(action.type) {
 		case "FETCH_ALL_CHAMPIONS": {
-			return {...state, all: action.payload.data };
+			return {
+				...state,
+				allRaw: action.payload.data,
+				allFiltered: action.payload.data
+			};
+		}
+		case "FILTER_CHAMPIONS": {
+			return {...state, allFiltered: action.payload}
 		}
 		case "FETCH_CHAMPION": {
 			return {...state, profile: action.payload.data}

@@ -4,7 +4,7 @@ import * as actions from '../champions.actions.js';
 import ChampionTable from './championTable.jsx';
 
 const stateToProps = (state) => ({
-	allChampions: state.champions.all,
+	allChampions: state.champions.allFiltered,
 	selected: state.champions.selected
 });
 
