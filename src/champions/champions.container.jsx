@@ -3,14 +3,15 @@ import * as actions from './champions.actions.js';
 import Champions from './champions.jsx';
 
 const stateToProps = (state) => ({
-	allChampions: state.champions.all,
+	rawChampions: state.champions.allRaw,
 	selected: state.champions.selected
 });
 
 const dispatchToProps = (dispatch) => {
 	return {
 		fetchAllChampions: () => dispatch( actions.fetchAllChampions() ),
-		fetchChampion: (id) => dispatch( actions.fetchChampion(id) )
+		fetchChampion: (id) => dispatch( actions.fetchChampion(id) ),
+		filterChampions: (searchString) => dispatch( actions.filterChampions(searchString))
 	}
 }
 
