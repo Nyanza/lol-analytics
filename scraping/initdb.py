@@ -24,6 +24,12 @@ def insert_to_db(name, info, counter):
     headers = {'Content-type': 'application/json', 'Accept': 'text/plain'} #set headers
     info['metrics'] = {} #init metrics
     metrics = load_json(json_path, json_files[counter])
+    for league in metrics:
+        for lane in metrics[league]:
+            if 'http' not in lane:
+                for x in metrics[league][lane]["build"]:
+                    x["img"] = x["src"]
+                    x.pop('src', None)
     skill_images = metrics.pop('skillImages', None)
     info['metrics'] = metrics
     default_metrics = {}
@@ -45,7 +51,7 @@ def insert_to_db(name, info, counter):
     spells = {'q': {}, 'w': {}, 'e': {}, 'r': {}}
     for spell in info['spells']:
         skill = 'qwer'[counter]
-        spells[skill]['image'] = skill_images[counter]
+        spells[skill]['img'] = skill_images[counter]
         spells[skill]['description'] = spell['description']
         spells[skill]['name'] = spell['name']
         counter += 1
