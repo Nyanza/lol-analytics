@@ -2,7 +2,7 @@ import requests
 import json
 url = 'https://raw.githubusercontent.com/Nyanza/lol-analytics/master/scraping/champions.json';
 g = requests.get(url)
-host = "http://lol.studio-ki.co"
+host = "http://localhost:8000"
 path = 'http://ddragon.leagueoflegends.com/cdn/img/champion'
 square_path = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion'
 
