@@ -41,9 +41,9 @@ def insert_to_db(name, info, counter):
     for lane in metrics["platplus"]:
         default_lane = lane
         break
-    default_metrics['Win Rate'] = metrics["platplus"][default_lane]["stats"]['Win Rate']
-    default_metrics['Play Rate'] = metrics["platplus"][default_lane]["stats"]['Pick Rate']
-    default_metrics['Ban Rate'] = metrics["platplus"][default_lane]["stats"]['Ban Rate']
+    default_metrics['win_rate'] = metrics["platplus"][default_lane]["stats"]['win_rate']
+    default_metrics['play_rate'] = metrics["platplus"][default_lane]["stats"]['pick_rate']
+    default_metrics['ban_rate'] = metrics["platplus"][default_lane]["stats"]['ban_rate']
     info['defaultMetrics'] = default_metrics
     info['squareImg'] = square_path + '/' + key + '.png'
     skins = info['skins']
