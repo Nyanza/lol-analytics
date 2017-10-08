@@ -30,15 +30,20 @@ def insert_to_db(name, info, counter):
                 for x in metrics[league][lane]["build"]:
                     x["img"] = x["src"]
                     x.pop('src', None)
+                if "counters" in metrics[league][lane]:
+                    for y in metrics[league][lane]["counters"]:
+                        for counter in metrics[league][lane]["counters"][y]:
+                            counter["Win Rate"] = counter["win_rate"]
+                            counter.pop('win_rate', None)
     skill_images = metrics.pop('skillImages', None)
     info['metrics'] = metrics
     default_metrics = {}
     for lane in metrics["platplus"]:
         default_lane = lane
         break
-    default_metrics['Win Rate'] = metrics["platplus"][default_lane]["stats"].pop('Win Rate', None)
-    default_metrics['Play Rate'] = metrics["platplus"][default_lane]["stats"].pop('Pick Rate', None)
-    default_metrics['Ban Rate'] = metrics["platplus"][default_lane]["stats"].pop('Ban Rate', None)
+    default_metrics['Win Rate'] = metrics["platplus"][default_lane]["stats"]['Win Rate']
+    default_metrics['Play Rate'] = metrics["platplus"][default_lane]["stats"]['Pick Rate']
+    default_metrics['Ban Rate'] = metrics["platplus"][default_lane]["stats"]['Ban Rate']
     info['defaultMetrics'] = default_metrics
     info['squareImg'] = square_path + '/' + key + '.png'
     skins = info['skins']
