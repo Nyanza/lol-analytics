@@ -5,6 +5,7 @@
 	background-color: $blackDark;
 	color: $white;
 	min-height: 100vh;
+	padding-bottom: 1vh;
 	.content {
 		padding: 0 1vw;
 	}
@@ -16,6 +17,11 @@
 	.metrics {
 		.title {
 			font-size: 1.5vw;
+			padding: 1vw 0;
+		}
+		.subtitle {
+			font-size: 1.2vw;
+			padding: 0.5vw 0;
 		}
 		&>* {
 			// border: solid red 1px;

@@ -12,8 +12,11 @@ class StatsTable extends Component {
 	renderCell(statKey, stat, index) {
 		return <div key={index} className='cell'>
 			<div className='value'>{stat}</div>
-			<div className='name'>{statKey}</div>
+			<div className='name'>{this.formatStatName(statKey)}</div>
 		</div>
+	}
+	formatStatName(name) {
+		return name.replace('_', ' ');
 	}
 	render() {
 		return <div className="statsTable">

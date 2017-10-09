@@ -5,6 +5,9 @@ import Header from './header/header.jsx';
 import FilterOptions from './filterOptions/filterOptions.jsx';
 import StatsTable from './statsTable/statsTable.jsx';
 import SkillOrder from './skillOrder/skillOrder.jsx';
+import Build from './build/build.jsx';
+import Counters from './counters/counters.jsx';
+
 import './championProfile.scss';
 
 class ChampionProfile extends Component {
@@ -29,6 +32,8 @@ class ChampionProfile extends Component {
 		return <div className='metrics'>
 			<StatsTable stats={filteredMetrics.stats}/>
 			<SkillOrder order={filteredMetrics.skill_order} spells={this.props.spells}/>
+			<Build items={filteredMetrics.build}/>
+			<Counters name={this.props.name} weak={filteredMetrics.counters.weak} strong={filteredMetrics.counters.strong}/>
 		</div>
 	}
 	renderFilters() {
@@ -44,13 +49,11 @@ class ChampionProfile extends Component {
 			onChange={this.handleFilterSelect} />;
 	}
 	handleFilterSelect(filterName, filterValue) {
-		if(filterName == 'rank') {
-			const laneKeys = Object.keys(this.props.stats[filterValue]);
-			const defaultLane = laneKeys[0];
-			const lane = laneKeys.includes(this.state.lane) ? this.state.lane : defaultLane;
-			this.setState({ [filterName]: filterValue, lane });
-		}
-		this.setState({ [filterName]: filterValue });
+		if(filterName != 'rank') return this.setState({ [filterName]: filterValue });
+		const laneKeys = Object.keys(this.props.stats[filterValue]);
+		const defaultLane = laneKeys[0];
+		const lane = laneKeys.includes(this.state.lane) ? this.state.lane : defaultLane;
+		return this.setState({ [filterName]: filterValue, lane });
 	}
 	renderHeader() {
 		return <Header 
