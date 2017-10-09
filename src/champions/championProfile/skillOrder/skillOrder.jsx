@@ -23,7 +23,7 @@ class SkillOrder extends Component {
 	renderRow(skillKey, index, rowLength) {
 		const spell = this.props.spells[skillKey];
 		return <div key={index} className='row'>
-			<img src={spell.image} alt={spell.name} className='cell image'/>
+			<img src={spell.img} alt={spell.name} className='cell image'/>
 			{this.renderSkillCells(skillKey)}
 		</div>
 	}

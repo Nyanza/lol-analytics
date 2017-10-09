@@ -4,14 +4,18 @@ import PropTypes from 'prop-types';
 class Counter extends Component {
 	renderChampions() {
 		return this.props.champions.map((champion, index) => {
-			reutrn this.renderChampion(champion, index);
+			return this.renderChampion(champion, index);
 		})
 	}
 	renderChampion(champion, index) {
 		return <div key={index} className='champion'>
 			<img src={champion.img} alt={champion.name}/>
-			<div className='name'>{champion.name}</div>
-			<div>{champion.win_rate}</div>
+			<div className='description'>
+				<div className='name'>{champion.name}</div>
+				<div className='rate'>{champion.win_rate}%</div>
+			</div>
+			
+				
 		</div>
 	}
 	render() {

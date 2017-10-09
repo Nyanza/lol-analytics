@@ -33,7 +33,7 @@ class ChampionProfile extends Component {
 			<StatsTable stats={filteredMetrics.stats}/>
 			<SkillOrder order={filteredMetrics.skill_order} spells={this.props.spells}/>
 			<Build items={filteredMetrics.build}/>
-			<Counters weak={filteredMetrics.counters.weak} strong={filteredMetrics.counters.strong}/>
+			<Counters name={this.props.name} weak={filteredMetrics.counters.weak} strong={filteredMetrics.counters.strong}/>
 		</div>
 	}
 	renderFilters() {

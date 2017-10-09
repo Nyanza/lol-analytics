@@ -12,10 +12,11 @@ class Build extends Component {
 	}
 	renderItem(item, index) {
 		return <div key={index} className='item'>
-			<img src={item.src} alt={item.id}/>
+			<img src={item.img} alt={item.id}/>
 		</div>
 	}
 	render() {
+		console.log(this.props)
 		return <div className='build'>
 			<div className='title'>Build</div>
 			{this.renderItems()}
