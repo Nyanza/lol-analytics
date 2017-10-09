@@ -18,6 +18,7 @@ def load_json(path, file):
 import operator
 sorted_champ = sorted(g.json().items(), key=operator.itemgetter(0))
 
+average = {}
 def insert_to_db(name, info, counter):
     key = info['key'] #get champ key
     name = info['name'] #get champ name
@@ -31,10 +32,22 @@ def insert_to_db(name, info, counter):
                     x["img"] = x["src"]
                     x.pop('src', None)
                 if "counters" in metrics[league][lane]:
-                    for y in metrics[league][lane]["counters"]:
-                        for counter in metrics[league][lane]["counters"][y]:
-                            counter["Win Rate"] = counter["win_rate"]
-                            counter.pop('win_rate', None)
+                    for z in metrics[league][lane]["counters"]:
+                        for weak_strong in metrics[league][lane]["counters"][z]:
+                            #print(weak_strong)
+                            weak_strong["win_rate"] = float(weak_strong["win_rate"].replace("%", ""))
+                metrics[league][lane]["radar_chart"] = {}
+                for y in list(metrics[league][lane]["stats"]):
+                    new_key = y.replace(" ", "_").lower()
+                    str_num = str(round(float(metrics[league][lane]["stats"][y].replace("%", "")), 2))
+                    if str_num[-1] == "0":
+                        str_num = int(str_num[0:len(str_num)-2])
+                    else:
+                        str_num = round(float(metrics[league][lane]["stats"][y].replace("%", "")), 2)
+                    metrics[league][lane]["stats"][new_key] = str_num
+                    z = metrics[league][lane]["stats"].pop(y, None)
+                    metrics[league][lane]["radar_chart"][new_key] = round((float(z.replace("%", "")) / average[league][lane][new_key]["total"]) * 10, 5)
+    #print(json.dumps(metrics))
     skill_images = metrics.pop('skillImages', None)
     info['metrics'] = metrics
     default_metrics = {}
@@ -65,7 +78,37 @@ def insert_to_db(name, info, counter):
     print(name)
     print(p)
 
+def get_average():
+    key = info['key'] #get champ key
+    name = info['name'] #get champ name
+    headers = {'Content-type': 'application/json', 'Accept': 'text/plain'} #set headers
+    info['metrics'] = {} #init metrics
+    metrics = load_json(json_path, json_files[counter])
+    for league in metrics:
+        for lane in metrics[league]:
+            if 'http' not in lane:
+                for y in list(metrics[league][lane]["stats"]):
+                    new_key = y.replace(" ", "_").lower()
+                    metrics[league][lane]["stats"][new_key] = metrics[league][lane]["stats"][y]
+                    z = metrics[league][lane]["stats"].pop(y, None)
+                    if league not in average:
+                        average[league] = {}
+                    if lane not in average[league]:
+                        average[league][lane] = {}
+                    if new_key not in average[league][lane]:
+                        average[league][lane][new_key] = {}
+                        average[league][lane][new_key]["average"] = float(z.replace("%",""))
+                        average[league][lane][new_key]["total"] = float(z.replace("%",""))
+                    else:
+                        average[league][lane][new_key]["average"] = (average[league][lane][new_key]["average"] + float(z.replace("%","")))/2
+                        average[league][lane][new_key]["total"] += float(z.replace("%", ""))
+counter = 0
+for name, info in sorted_champ:
+    get_average()
+    counter += 1
 counter = 0
 for name, info in sorted_champ:
     insert_to_db(name, info, counter)
     counter += 1
+    if counter < 1:
+        break
