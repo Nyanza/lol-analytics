@@ -3,8 +3,8 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const ROOT_PATH = path.resolve(__dirname);
-const OUTPUT_PATH = path.resolve(ROOT_PATH, 'dist');
-const TEMPLATE_PATH = path.resolve(ROOT_PATH, 'index.html');
+const OUTPUT_PATH = path.resolve(ROOT_PATH, 'server/static');
+const TEMPLATE_PATH = path.resolve(ROOT_PATH, 'server/templates/index.html');
 const ENTRY_PATH = path.resolve(ROOT_PATH, 'src/index.jsx');
 
 module.exports = {
