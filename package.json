@@ -7,7 +7,7 @@
     "node": "6.1.0"
   },
   "scripts": {
-    "start:server": "node ./server/index.js",
+    "start:server": "python server/index.py",
     "init:db": "sequelize db:migrate:undo:all && sequelize db:migrate && python ./scraping/initdb.py",
     "start:client": "webpack-dev-server --inline",
     "start": "npm run start:server",
