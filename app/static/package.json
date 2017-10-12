@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start:server": "python ../index.py",
-    "init:db": "sequelize db:migrate:undo:all && sequelize db:migrate && python ./scraping/initdb.py",
     "start:client": "webpack-dev-server --inline",
     "start": "npm run start:server",
     "dev": "npm run start:server | npm run start:client",
