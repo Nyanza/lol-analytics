@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Lora:700|Muli:400,600');
+@import './shared/variables.scss';
+
+body{
+	margin: 0;
+	padding: 0;
+	@include bodyFont();
+	#root {
+		box-sizing: border-box;
+		padding-left: $navWidth;
+		width: 100vw;
+		height: 100%;
+		overflow-x: hidden;
+	}	
+}
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
