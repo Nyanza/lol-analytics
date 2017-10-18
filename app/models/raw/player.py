@@ -1,0 +1,7 @@
+class Player(db.Model)
+	player_id = db.Column(db.Integer, primary_key = True)
+	current_platform_id = db.Column(db.String(5), unique = False, nullable = False)
+	summoner_name = db.Column(db.String(25), unique = False, nullable = False)
+	matchi_history_uri = db.Column(db.String(25), unique = False, nullable = False)
+	account_id = db.Column(db.Integer, unique = False, nullable = False)
+	profile_icon = db.Column(db.Integer, unique = False, nullable = False)

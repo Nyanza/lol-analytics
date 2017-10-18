@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
 
 class Match(db.Model):
-	id = db.Column(db.Integer, primary_key = True)
+	match_id = db.Column(db.Integer, primary_key = True)
 	season_id = db.Column(db.Integer, unique = False, nullable = False)
 	queue_id = db.Column(db.Integer, unique = False, nullable = False)
 	game_id = db.Column(db.Integer, unique = False, nullable = False)
@@ -15,3 +15,5 @@ class Match(db.Model):
 	platform_id = db.Column(db.String(5), unique = False, nullable = False)
 	game_mode = db.Column(db.String(10), unique = False, nullable = False)
 	map_id = db.Column(db.Integer, unique = False, nullable = False)
+	game_duration = db.Column(db.Integer, unique = False, nullable = False)
+	game_creation = db.Column(db.Integer, unique = False, nullable = False)
